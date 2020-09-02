@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Form.css'
 
 class Form extends Component {
   constructor(props) {
@@ -34,8 +35,9 @@ class Form extends Component {
           this.resetInputs()
         }}
       >
+        <h2>Add a Song</h2>
         <input
-          className='songName-input'
+          className='input'
           type='text'
           id='songName'
           placeholder='Song Name'
@@ -43,7 +45,7 @@ class Form extends Component {
           onChange={(event) => this.handleInput(event)}
         />
         <input
-          className='artistName-input'
+          className='input'
           type='text'
           id='artistName'
           placeholder='Artist Name'
@@ -51,7 +53,7 @@ class Form extends Component {
           onChange={(event) => this.handleInput(event)}
         />
         <input
-          className='link-input'
+          className='input'
           type='text'
           id='link'
           placeholder='Song Link'
