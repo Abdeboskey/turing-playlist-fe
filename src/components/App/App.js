@@ -26,7 +26,7 @@ class App extends Component {
 
   addSong = (event, songName, artistName, link) => {
     event.preventDefault()
-    const newSong = { songName, artistName, link, id: this.state.songQueue.length}
+    const newSong = { songName, artistName, link, id: (this.state.songQueue.length + 1)}
     this.setState({
       songQueue: [...this.state.songQueue, newSong]
     })
