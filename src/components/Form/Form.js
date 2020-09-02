@@ -64,7 +64,7 @@ class Form extends Component {
           Add Song
         </button>
       </form>
-    );
+    )
   }
 }
 
