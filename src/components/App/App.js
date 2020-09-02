@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import SongController from '../SongController/SongController';
+import { getSongs } from '../../apiCalls'
 
 class App extends Component {
   constructor() {
@@ -8,6 +9,13 @@ class App extends Component {
     this.state = {
       songQueue: []
     }
+  }
+
+  componentDidMount() {
+    getSongs()
+      .then(songs => this.setState({
+        songQueue: [...songs]
+      }))
   }
 
 
