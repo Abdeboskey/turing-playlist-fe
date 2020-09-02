@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import './App.css';
-import SongController from '../SongController/SongController';
+import React, { Component } from 'react'
+import './App.css'
+import SongController from '../SongController/SongController'
 import Songs from '../Songs/Songs'
 import { getSongs } from '../../apiCalls'
 
 class App extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       songQueue: []
     }
