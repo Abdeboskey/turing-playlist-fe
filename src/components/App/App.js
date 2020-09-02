@@ -15,12 +15,9 @@ class App extends Component {
 
   componentDidMount() {
     getSongs()
-      .then(songs => {
-        this.setState({
+      .then(songs => this.setState({
         songQueue: [...songs]
-      })
-    }
-      )
+    }))
       .catch(error => console.log(error))
   }
 
