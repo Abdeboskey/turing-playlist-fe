@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import SongController from '../SongController/SongController';
+import Songs from '../Songs/Songs'
 import { getSongs } from '../../apiCalls'
 
 class App extends Component {
@@ -13,9 +14,13 @@ class App extends Component {
 
   componentDidMount() {
     getSongs()
-      .then(songs => this.setState({
+      .then(songs => {
+        this.setState({
         songQueue: [...songs]
-      }))
+      })
+    }
+      )
+      .catch(error => console.log(error))
   }
 
 
@@ -27,6 +32,7 @@ class App extends Component {
         </header>
         <div className="App-background">
           <main>
+            <Songs songs={this.state.songQueue} />
             <SongController />
           </main>
         </div> 
