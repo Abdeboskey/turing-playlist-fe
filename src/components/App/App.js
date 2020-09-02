@@ -19,6 +19,7 @@ class App extends Component {
         </header>
         <div className="App-background">
           <main>
+            <SongController />
           </main>
         </div> 
       </div>
