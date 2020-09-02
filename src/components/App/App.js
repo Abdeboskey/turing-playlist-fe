@@ -3,6 +3,7 @@ import './App.css'
 import SongController from '../SongController/SongController'
 import Songs from '../Songs/Songs'
 import { getSongs } from '../../apiCalls'
+import Form from '../Form/Form'
 
 class App extends Component {
   constructor() {
@@ -23,6 +24,13 @@ class App extends Component {
       .catch(error => console.log(error))
   }
 
+  addSong = (event, songName, artistName, link) => {
+    event.preventDefault()
+    const newSong = { songName, artistName, link, id: this.state.songQueue.length}
+    this.setState({
+      songQueue: [...this.state.songQueue, newSong]
+    })
+  }
 
   render() {
     return (
@@ -32,6 +40,7 @@ class App extends Component {
         </header>
         <div className="App-background">
           <main>
+            <Form addSong={this.addSong} />
             <Songs songs={this.state.songQueue} />
             <SongController />
           </main>
